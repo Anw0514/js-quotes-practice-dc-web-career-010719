@@ -8,9 +8,24 @@ class Comment {
 
     render(container) {
         console.log(this)
-        const com = document.createElement('div')
-        com.innerHTML = this.quote
-        container.appendChild(com)
+        const comCard = document.createElement('li')
+        comCard.className = 'quote-card'
+
+        const comQuote = document.createElement('blockquote')
+        comQuote.className = 'blockquote'
+    
+        const quote = document.createElement('p')
+        quote.className = 'mb-0'
+        quote.innerHTML = this.quote
+
+        const author = document.createElement('footer')
+        author.className = 'blockquote-footer'
+        author.innerHTML = this.author
+
+        comQuote.appendChild(quote)
+        comQuote.appendChild(author)
+        comCard.appendChild(comQuote)
+        container.appendChild(comCard)
     }
 
     static getComments() {
