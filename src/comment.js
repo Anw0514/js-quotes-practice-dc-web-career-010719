@@ -7,7 +7,6 @@ class Comment {
     }
 
     render(container) {
-        console.log(this)
         const comCard = document.createElement('li')
         comCard.className = 'quote-card'
 
